@@ -1,18 +1,19 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
-<div style="text-align: center"><img src="/WEB-INF/cafeina-logo2.jpg" alt="Cafeina logo"/> </div>
+<div style="text-align: center"><img src="<c:url value="/resources/assets/cafeina-logo.png"/>" alt="Cafeina logo"/> </div>
 <ul class="nav justify-content-center">
     <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link text-secondary" href="#">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Cakes</a>
+        <a class="nav-link text-secondary" href="#">Cakes</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Orders</a>
+        <a class="nav-link text-secondary" href="#">Orders</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link text-secondary" href="#">Contact</a>
     </li>
 </ul>
 <hr>
