@@ -23,4 +23,58 @@ public class Cake {
     @NotEmpty
     @Column(name = "price")
     private Double pricePerKilo;
+
+    private Boolean status;
+
+    public Cake(){
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getWeigth() {
+        return weigth;
+    }
+
+    public void setWeigth(String weigth) {
+        this.weigth = weigth;
+    }
+
+    public Double getPricePerKilo() {
+        return pricePerKilo;
+    }
+
+    public void setPricePerKilo(Double pricePerKilo) {
+        this.pricePerKilo = pricePerKilo;
+    }
+
+    public Boolean getStatus() {
+        return status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
 }

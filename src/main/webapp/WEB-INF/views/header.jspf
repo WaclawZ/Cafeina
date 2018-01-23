@@ -4,10 +4,10 @@
 <div style="text-align: center"><img src="<c:url value="/resources/assets/cafeina-logo.png"/>" alt="Cafeina logo"/> </div>
 <ul class="nav justify-content-center">
     <li class="nav-item">
-        <a class="nav-link text-secondary" href="#">Home</a>
+        <a class="nav-link text-secondary" href="/">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-secondary" href="#">Cakes</a>
+        <a class="nav-link text-secondary" href="/cake">Cakes</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-secondary" href="#">Orders</a>
