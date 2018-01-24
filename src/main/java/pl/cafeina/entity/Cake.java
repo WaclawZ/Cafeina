@@ -3,6 +3,7 @@ package pl.cafeina.entity;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cakes")
@@ -20,11 +21,18 @@ public class Cake {
     @NotEmpty
     private String weigth;
 
-    @NotEmpty
     @Column(name = "price")
-    private Double pricePerKilo;
+    @NotEmpty
+    private String pricePerKilo;
 
+    @NotNull
     private Boolean status;
+
+    @NotEmpty
+    private String imgUrl;
+
+    @NotEmpty
+    private String description;
 
     public Cake(){
 
@@ -62,11 +70,11 @@ public class Cake {
         this.weigth = weigth;
     }
 
-    public Double getPricePerKilo() {
+    public String getPricePerKilo() {
         return pricePerKilo;
     }
 
-    public void setPricePerKilo(Double pricePerKilo) {
+    public void setPricePerKilo(String pricePerKilo) {
         this.pricePerKilo = pricePerKilo;
     }
 
@@ -76,5 +84,21 @@ public class Cake {
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

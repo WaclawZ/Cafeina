@@ -24,7 +24,7 @@ public class CakeController {
     @GetMapping("")
     public String showCakes(Model model){
         List<Cake> cakes = new ArrayList<>();
-        cakes = cakeDao.findAll();
+        cakes = cakeDao.findAllByStatus(true);
 
         model.addAttribute("cakes",cakes);
         return "cakes/show_all_cakes";
@@ -43,8 +43,9 @@ public class CakeController {
         if(result.hasErrors()){
             return "cakes/add_cake_form";
         }
+        System.out.println(cake.getDescription());
         cakeDao.save(cake);
-        return "cakes/show_all";
+        return "redirect:/cake";
     }
 
 }
