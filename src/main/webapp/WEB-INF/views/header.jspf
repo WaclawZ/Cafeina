@@ -2,7 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 
 <div style="height: 10px"></div>
-<div style="text-align: center"><img src="<c:url value="/resources/assets/cafeina-logo.png"/>" alt="Cafeina logo"/> </div>
+<div style="text-align: center">
+    <img src="<c:url value="/resources/assets/cafeina-logo.png"/>" alt="Cafeina logo"/>
+</div>
 <div style="height: 10px"></div>
 <ul class="nav justify-content-center">
     <li class="nav-item">
@@ -15,7 +17,11 @@
         <a class="nav-link text-secondary" href="#">Orders</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-secondary" href="#">Contact</a>
+        <a class="nav-link text-secondary" href="/contact">Contact</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-secondary" href="#">Login</a>
     </li>
 </ul>
+
 <hr>

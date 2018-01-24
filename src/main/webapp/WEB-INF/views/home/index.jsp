@@ -24,9 +24,7 @@
     </style>
 </head>
 <body>
-<div>
     <%@include file="/WEB-INF/views/header.jspf" %>
-</div>
 <div class="container">
         <div id="myCarousel" class="carousel slide row justify-content-center">
             <div class="carousel-inner" role="listbox">
@@ -55,9 +53,7 @@
         </div>
     </div>
 </div>
-<div class>
     <%@include file="/WEB-INF/views/footer.jspf" %>
-</div>
 </body>
 <script src="<c:url value="/resources/scripts/homeApp.js"/>"></script>
 </html>
