@@ -28,9 +28,6 @@ public class User {
     @Size(min = 5)
     private String password;
 
-    @Pattern(regexp = "^[0-9]{9,12}$")
-    private String phoneNumber;
-
     @NotEmpty
     private Integer age;
 
@@ -79,14 +76,6 @@ public class User {
     public void setPassword(String password) {
         String hashedPass = BCrypt.hashpw(password, BCrypt.gensalt(2));
         this.password = hashedPass;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public Integer getAge() {
