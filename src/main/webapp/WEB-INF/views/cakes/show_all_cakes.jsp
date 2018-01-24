@@ -5,7 +5,8 @@
   Time: 16:28
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -17,43 +18,45 @@
 </head>
 <body>
 <%@include file="../header.jspf" %>
+<%--<div class="container">--%>
+    <%--<div class="card-deck">--%>
+
+        <%--<div class="card d-inline-flex" style="width: 18rem;">--%>
+            <%--<img class="card-img-top" src="/resources/assets/cakes/zielony_mech.jpg" alt="Card image cap">--%>
+            <%--<div class="card-body">--%>
+                <%--<h4 class="card-title">Card title</h4>--%>
+                <%--<p class="card-text">Some quick example text to build on the card title and make up the bulk of the--%>
+                    <%--card's content.</p>--%>
+                <%--<a href="#" class="btn btn-primary">Go somewhere</a>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+
+    <%--</div>--%>
+
+<%--</div>--%>
 
 <div class="container">
+
     <div class="card-deck">
-
-        <div class="card d-inline-flex" style="width: 18rem;">
-            <img class="card-img-top" src="/resources/assets/cakes/zielony_mech.jpg" alt="Card image cap">
+    <c:forEach items="${cakes}" var="cake" varStatus="i">
+        <div class="card d-inline-flex" style="max-width: 350px">
+            <img class="card-img-top" src="/resources/assets/cakes/${cake.imgUrl}" alt="${cake.name}">
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h4 class="card-title">${cake.name}</h4>
+                <p class="card-text">${cake.description}.</p>
+            </div>
+            <div class="card-footer">
+                <a href="/cake/${cake.id}" class="btn btn-primary">Szczegóły</a>
             </div>
         </div>
-        <div class="card d-inline-flex" style="width: 18rem;">
-            <img class="card-img-top" src="/resources/assets/cakes/tiramisu.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+        <c:if test="${(i.index + 1) % 3 == 0}">
             </div>
-        </div>
-        <div class="card d-inline-flex" style="width: 18rem;">
-            <img class="card-img-top" src="/resources/assets/cakes/czeko_pom.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                    card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
-
+            <div class="card-deck">
+        </c:if>
+    </c:forEach>
     </div>
 
 </div>
-
-
 
 <%@include file="../footer.jspf" %>
 </body>
