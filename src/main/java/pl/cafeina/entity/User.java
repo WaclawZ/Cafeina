@@ -2,6 +2,7 @@ package pl.cafeina.entity;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -9,7 +10,7 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "users")
+@Table(name = "users", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +28,7 @@ public class User {
     @Size(min = 5)
     private String password;
 
-    @Pattern(regexp = "^[0-9]{6,9}$")
+    @Pattern(regexp = "^[0-9]{9,12}$")
     private String phoneNumber;
 
     @NotEmpty
@@ -76,7 +77,8 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        String hashedPass = BCrypt.hashpw(password, BCrypt.gensalt(2));
+        this.password = hashedPass;
     }
 
     public String getPhoneNumber() {

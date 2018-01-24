@@ -29,13 +29,13 @@
         <div id="myCarousel" class="carousel slide row justify-content-center">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="/resources/assets/cafeina-home1.jpg" alt="Chania">
+                    <img src="/resources/assets/cafeina-home1.jpg" alt="Cafeina-1">
                 </div>
                 <div class="item">
-                    <img src="/resources/assets/cafeina-home2.jpg" alt="Chania">
+                    <img src="/resources/assets/cafeina-home2.jpg" alt="Cafeina-2">
                 </div>
                 <div class="item">
-                    <img src="/resources/assets/cafeina-home3.jpg" alt="Flower">
+                    <img src="/resources/assets/cafeina-home3.jpg" alt="Cafeina-3">
                 </div>
             </div>
         </div>

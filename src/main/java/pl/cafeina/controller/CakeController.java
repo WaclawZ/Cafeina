@@ -44,7 +44,6 @@ public class CakeController {
         if(result.hasErrors()){
             return "cakes/add_cake_form";
         }
-        System.out.println(cake.getDescription());
         cakeDao.save(cake);
         return "redirect:/cake";
     }
