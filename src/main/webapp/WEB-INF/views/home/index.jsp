@@ -25,7 +25,7 @@
 </head>
 <body>
     <%@include file="/WEB-INF/views/header.jspf" %>
-<div class="container">
+<div style="min-height: 40em" class="container">
         <div id="myCarousel" class="carousel slide row justify-content-center">
             <div class="carousel-inner" role="listbox">
                 <div class="item active">

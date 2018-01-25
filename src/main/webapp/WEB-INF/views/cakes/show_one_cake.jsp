@@ -17,7 +17,7 @@
 </head>
 <body>
 <%@include file="../header.jspf"%>
-<div class="container">
+<div style="min-height: 40em" class="container">
     <h1 class ="row justify-content-center" style="margin: auto">${cake.name}</h1>
     <div class="row justify-content-center" style="margin: auto; max-width: 362px; max-height: 240px"><img src="/resources/assets/cakes/${cake.imgUrl}"/></div>
     <div style="height: 100px"></div>

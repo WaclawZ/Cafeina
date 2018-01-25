@@ -2,10 +2,8 @@ package pl.cafeina.entity;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.mindrot.jbcrypt.BCrypt;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -16,25 +14,27 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Size(min = 3)
+    @Size(min = 3, message = "Minimum 3 znaki")
     private String firstName;
 
-    @Size(min = 3)
-    private String lastname;
+    @Size(min = 3, message = "Minimum 3 znaki")
+    private String lastName;
 
-    @Email
+    @NotEmpty(message = "Nie może być puste")
+    @Pattern(regexp = "^[_A-Za-z0-9\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$",
+            message = "Niepoprawny format")
     private String email;
 
-    @Size(min = 5)
+    @Size(min = 5, message = "Minimum 5 znaków")
     private String password;
 
-    @NotEmpty
+    @NotEmpty(message = "Nie może być puste")
     @Pattern(regexp = "^[0-9]{1,2}$", message = "Niepoprawny format")
     private String age;
 
     private Boolean admin;
 
-    public User(){
+    public User() {
     }
 
     public Long getId() {
@@ -53,12 +53,12 @@ public class User {
         this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getEmail() {

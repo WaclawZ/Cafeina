@@ -18,7 +18,7 @@
 </head>
 <body>
 <%@include file="../header.jspf" %>
-<div class="container">
+<div style="min-height: 40em" class="container">
 
     <div class="card-deck">
         <c:forEach items="${cakes}" var="cake" varStatus="i">

@@ -16,10 +16,21 @@
     <title>Cafeina - Login</title>
 </head>
 <body>
-<%@include file="../header.jspf"%>
-    <div class="container">
+<%@include file="../header.jspf" %>
+<div style="min-height: 40em" class="container">
+    <div class="row justify-content-center">
+        <form method="post" action="#">
+            <label>Email:</label>
+            <input class="form-control" type="text" name="username" id="username" placeholder="Email"><br>
+            <label>Hasło:</label>
+            <input class="form-control" type="password" name="password" id="password" placeholder="Hasło"><br>
+            <input class="btn btn-primary" type="submit" value="Zaloguj się">
+        </form>
+    </div>
+    <div class="row justify-content-center">
         <a href="register">Nie masz konta? Zarejestruj się.</a>
     </div>
-<%@include file="../footer.jspf"%>
+</div>
+<%@include file="../footer.jspf" %>
 </body>
 </html>

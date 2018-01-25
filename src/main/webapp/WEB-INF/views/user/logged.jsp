@@ -5,7 +5,7 @@
   Time: 10:54
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
@@ -17,9 +17,35 @@
 </head>
 <body>
 <%@include file="../header.jspf"%>
-<div class="container">
+<div style="min-height: 40em" class="container">
     <div class="row justify-content-center">
-        Twój profil
+        <h2>Twój profil</h2>
+    </div>
+    <div class="row justify-content-center">
+        <table class="table table-hover">
+            <tr>
+                <th scope="row">Imię</th>
+                <td>${user.firstName}</td>
+                <td>Edytuj</td>
+            </tr>
+            <tr>
+                <th scope="row">Nazwisko</th>
+                <td>${user.lastName}</td>
+                <td>Edytuj</td>
+            </tr>
+            <tr>
+                <th scope="row">Wiek</th>
+                <td>${user.age}</td>
+                <td>Edytuj</td>
+            </tr>
+            <tr>
+                <th scope="row">Hasło</th>
+                <td colspan="2">Edytuj</td>
+            </tr>
+        </table>
+    </div>
+    <div class="row justify-content-end">
+        <a class="btn btn-light" href="/user/logout" />Wyloguj</a>
     </div>
 </div>
 <%@include file="../footer.jspf"%>

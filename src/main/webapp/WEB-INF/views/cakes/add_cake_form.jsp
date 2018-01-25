@@ -18,7 +18,7 @@
 </head>
 <body>
 <%@include file="../header.jspf" %>
-<div class="container">
+<div style="min-height: 40em" class="container">
     <%--@elvariable id="cake" type="pl.cafeina.entity.Cake"--%>
     <form:form method="post" action="#" modelAttribute="cake">
         <div class="form-group">

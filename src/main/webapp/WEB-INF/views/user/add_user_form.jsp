@@ -18,7 +18,7 @@
 </head>
 <body>
 <%@include file="../header.jspf" %>
-<div class="container">
+<div style="min-height: 40em" class="container">
     <%--@elvariable id="user" type="pl.cafeina.entity.User"--%>
     <form:form method="post" action="#" modelAttribute="user">
         <div class="form-group">
@@ -28,8 +28,8 @@
         </div>
         <div class="form-group">
             <label>Nazwisko: </label>
-            <form:input class="form-control" path="lastname"/>
-            <form:errors path="lastname"/><br>
+            <form:input class="form-control" path="lastName"/>
+            <form:errors path="lastName"/><br>
         </div>
         <div class="form-group">
             <label>Email: </label>

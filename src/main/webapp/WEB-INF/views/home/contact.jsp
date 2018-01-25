@@ -17,7 +17,7 @@
 </head>
 <body>
 <%@include file="../header.jspf"%>
-    <div class="container">
+    <div style="min-height: 40em" class="container">
         <center>
             <img src="/resources/assets/wait.png" alt="wait">
         </center>
