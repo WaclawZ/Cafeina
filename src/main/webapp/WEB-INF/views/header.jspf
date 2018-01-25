@@ -14,7 +14,7 @@
         <a class="nav-link text-secondary" href="/cake">Cakes</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link text-secondary" href="#">Orders</a>
+        <a class="nav-link text-secondary" href="/order">Orders</a>
     </li>
     <li class="nav-item">
         <a class="nav-link text-secondary" href="/contact">Contact</a>

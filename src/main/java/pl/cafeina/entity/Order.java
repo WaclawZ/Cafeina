@@ -1,9 +1,11 @@
 package pl.cafeina.entity;
 
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -14,7 +16,7 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty
+    @NotEmpty(message = "Nie może być puste")
     @ManyToMany
     private List<Cake> cakes;
 
@@ -23,9 +25,16 @@ public class Order {
             message = "Niepoprawny format")
     private String email;
 
-    @NotEmpty
-    @Pattern(regexp = "^[0-9]{9-12}$")
+    @NotEmpty(message = "Nie może być puste")
+    @Pattern(regexp = "^[0-9]{9,12}$", message = "Zły format danych")
     private String number;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date orderDate;
 
     public Order(){
     }
@@ -60,5 +69,21 @@ public class Order {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
     }
 }

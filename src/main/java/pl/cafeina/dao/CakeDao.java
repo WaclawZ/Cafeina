@@ -8,4 +8,6 @@ import java.util.List;
 public interface CakeDao extends JpaRepository<Cake, Long> {
 
     List<Cake> findAllByStatus(boolean status);
+
+    Cake getCakeById(Long id);
 }
