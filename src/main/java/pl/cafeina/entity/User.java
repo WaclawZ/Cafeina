@@ -29,10 +29,10 @@ public class User {
     private String password;
 
     @NotEmpty
-    private Integer age;
+    @Pattern(regexp = "^[0-9]{1,2}$", message = "Niepoprawny format")
+    private String age;
 
-    @NotNull
-    private Boolean admin = false;
+    private Boolean admin;
 
     public User(){
     }
@@ -74,15 +74,14 @@ public class User {
     }
 
     public void setPassword(String password) {
-        String hashedPass = BCrypt.hashpw(password, BCrypt.gensalt(2));
-        this.password = hashedPass;
+        this.password = password;
     }
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(String age) {
         this.age = age;
     }
 

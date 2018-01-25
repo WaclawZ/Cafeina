@@ -1,5 +1,6 @@
 package pl.cafeina.controller;
 
+import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,15 +26,15 @@ public class UserController {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if(user == null){
-            return "redirect:/login";
+            return "redirect:user/login";
         }
 
-        return "redirect:/logged";
+        return "user/logged";
     }
 
     @GetMapping("/login")
     public String login(){
-        return null;
+        return "user/login_user_form";
     }
 
     @GetMapping("/register")
@@ -41,18 +42,23 @@ public class UserController {
         User user = new User();
 
         model.addAttribute("user",user);
-        return "add_user_form";
+        return "user/add_user_form";
     }
 
     @PostMapping("/register")
-    public String register(@Valid User user, HttpServletRequest request, BindingResult result){
+    public String register(@Valid User user, BindingResult result, HttpServletRequest request){
         if(result.hasErrors()){
-            return "add_user_form";
+            return "user/add_user_form";
         }
+
+        String hashedPass = BCrypt.hashpw(user.getPassword(),BCrypt.gensalt());
+        user.setPassword(hashedPass);
+        user.setAdmin(false);
+        userDao.save(user);
+
         HttpSession session = request.getSession();
         session.setAttribute("user",user);
 
-        userDao.save(user);
-        return "redirect:/logged";
+        return "redirect:/";
     }
 }
