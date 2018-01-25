@@ -34,6 +34,9 @@ public class Cake {
     @NotEmpty
     private String description;
 
+    @NotEmpty
+    private String composition;
+
     public Cake(){
 
     }
@@ -100,5 +103,13 @@ public class Cake {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getComposition() {
+        return composition;
+    }
+
+    public void setComposition(String composition) {
+        this.composition = composition;
     }
 }

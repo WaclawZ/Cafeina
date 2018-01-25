@@ -40,6 +40,10 @@
                 <td>${fullPrice}</td>
             </tr>
             <tr>
+                <th scope="row">Skład</th>
+                <td>${cake.composition}</td>
+            </tr>
+            <tr>
                 <th scope="row">Opis</th>
                 <td>${cake.description}</td>
             </tr>

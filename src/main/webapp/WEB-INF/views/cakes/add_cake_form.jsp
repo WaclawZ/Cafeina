@@ -52,6 +52,11 @@
             <form:errors path="description"/><br>
         </div>
         <div class="form-group">
+            <label>Composition: </label>
+            <form:input class="form-control" path="composition"/>
+            <form:errors path="description"/><br>
+        </div>
+        <div class="form-group">
             <label>Status: </label>
             <form:checkbox class="form-check-input" path="status"/>
         </div>

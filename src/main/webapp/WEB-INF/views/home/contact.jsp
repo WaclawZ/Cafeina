@@ -18,7 +18,7 @@
 <body>
 <%@include file="../header.jspf"%>
     <div class="container">
-        <img class="row justify-content-center" src="/resources/assets/wait.png" alt="wait">
+        <img style="text-align: center" src="/resources/assets/wait.png" alt="wait">
     </div>
 <%@include file="../footer.jspf"%>
 </body>
