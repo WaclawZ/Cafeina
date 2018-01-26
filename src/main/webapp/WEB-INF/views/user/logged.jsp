@@ -19,7 +19,7 @@
 <%@include file="../header.jspf"%>
 <div style="min-height: 40em" class="container">
     <div class="row justify-content-center">
-        <h2>Twój profil</h2>
+        <h1>Twój profil:</h1>
     </div>
     <div class="row justify-content-center">
         <table class="table table-hover">
@@ -40,9 +40,13 @@
             </tr>
             <tr>
                 <th scope="row">Hasło</th>
-                <td colspan="2">Edytuj</td>
+                <td>********</td>
+                <td>Edytuj</td>
             </tr>
         </table>
+    </div>
+    <div class="row justify-content-center">
+        <h3>Twoje zamówienia:</h3><br>
     </div>
     <div class="row justify-content-end">
         <a class="btn btn-light" href="/user/logout" />Wyloguj</a>

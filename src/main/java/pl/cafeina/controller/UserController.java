@@ -47,6 +47,7 @@ public class UserController {
     @GetMapping("/logged")
     public String profile(@AuthenticationPrincipal UserPrincipal principal, Model model){
         User user = userDao.findByEmail(principal.getUsername());
+
         model.addAttribute("user",user);
         return "user/logged";
     }
