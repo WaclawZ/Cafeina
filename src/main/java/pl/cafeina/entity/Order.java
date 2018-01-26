@@ -36,6 +36,8 @@ public class Order {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date orderDate;
 
+    private boolean status;
+
     public Order(){
     }
 
@@ -85,5 +87,13 @@ public class Order {
 
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
