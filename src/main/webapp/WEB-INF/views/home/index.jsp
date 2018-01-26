@@ -39,7 +39,9 @@
                 </div>
             </div>
         </div>
+    <div style="height: 50px"></div>
     <div class="row justify-content-center">
+        <div class="col"></div>
         <div class="col">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna
@@ -51,6 +53,7 @@
             Excepteur
             sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
+        <div class="col"></div>
     </div>
 </div>
     <%@include file="/WEB-INF/views/footer.jspf" %>
