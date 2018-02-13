@@ -3,7 +3,6 @@
 Cafe website with the option of ordering cakes for logged in users.
 
 Functionality:
-
   -Main page
   -Page with all available cakes and subpages with details of each cake
   -Login/Register panel
@@ -11,13 +10,11 @@ Functionality:
   -Profile panel after logging in
 
 Future extensions:
-
   -Admin panel for managing cakes and users
   -Worker panel for checking orders
   -Improving the order form with cakes images
 
 Used technologies:
-
   -Java
   -Spring
   -Spring Security
@@ -29,5 +26,4 @@ Used technologies:
   -CSS
 
 IDE:
-
   -IntelliJ
