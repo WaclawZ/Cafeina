@@ -1,6 +1,6 @@
 # Cafeina
 
-Cafe website with the option of ordering cakes for logged in users
+Cafe website with the option of ordering cakes for logged in users.
 
 Functionality:
 
